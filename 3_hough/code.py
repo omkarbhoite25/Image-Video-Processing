@@ -36,8 +36,8 @@ def hough_circle_transform(image, edge_image, r_min, r_max, delta_r, theta_step_
       circles.append((x, y, r, current_vote))
       if x >= 0 and x < cols and y >= 0 and y < rows:
         accu[y][x] = 255
-      else:
-        accu[y][x] = 0
+      # else:
+      #   accu[y][x] = 0
 
   pixel_threshold = pixel_Threshold
   circ = []
@@ -48,8 +48,8 @@ def hough_circle_transform(image, edge_image, r_min, r_max, delta_r, theta_step_
   for x, y, r, v in circles:
     hough_circles_with_center = cv2.circle(hough_circles, (x,y), r, (0,0,255), 2)
     hough_circles_with_center = cv2.circle(hough_circles,(x,y),2,(0,255,0),3)
-  for x, y, r, v in circles:
     hough_circles_without_center = cv2.circle(hough_circles_prime, (x,y), r, (0,0,255), 2)
+
   return hough_circles_with_center,accu, hough_circles_without_center
 
 def main():
@@ -66,8 +66,9 @@ def main():
   if ksize == 0:
     input_img = input_img
   else:
-    input_img = cv2.medianBlur(input_img,ksize)
+    input_img = cv2.bilateralFilter(input_img,ksize,50,50)
   edge_image = cv2.Canny(input_img,100, 200)
+  # print(edge_image.shape)
   cv2.imshow('Edge Image', edge_image)
   print('Press any key to proceed')
   cv2.waitKey(0)

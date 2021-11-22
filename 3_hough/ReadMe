@@ -1,0 +1,47 @@
+cells.png
+
+Image: cells.png
+R minimum: 10
+R maximum: 20
+Ksize: 3
+Radius step size: 1
+Theta step size : 120
+Thershold: 0.37
+Pixel Thershold: 7
+
+
+Circles.png
+
+Image: circles.png
+R minimum: 10
+R maximum: 15
+Ksize: 9
+Radius step size: 1
+Theta step size : 110
+Thershold: 0.3
+Pixel Thershold: 7
+
+
+blood.png
+
+
+Image: blood.png
+R minimum: 9
+R maximum: 12
+Ksize: 11
+Radius step size: 1
+Theta step size : 110
+Thershold: 0.39
+Pixel Thershold: 11
+
+
+cable.png
+
+Image: cable.png
+R minimum: 20
+R maximum: 25
+Ksize: 13
+Radius step size: 1
+Theta step size : 120
+Thershold: 0.29
+Pixel Thershold: 10
